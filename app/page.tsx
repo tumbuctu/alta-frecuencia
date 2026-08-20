@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-tag.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
+        <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
         <nav aria-label="Navegación principal"><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#centro">El centro</a></nav>
         <a className="button button-small" href="#contacto">Pide cita</a>
       </header>
@@ -25,24 +25,24 @@ export default function Home() {
       <section className="hero" id="inicio">
         <div className="hero-copy">
           <p className="eyebrow">Fisioterapia · Entrenamiento personal</p>
-          <h1>Tu cuerpo no se para.<br /><span>Nosotros tampoco.</span></h1>
+          <h1>Tu cuerpo no para<br /><span>Nosotros tampoco</span></h1>
           <p className="hero-text">Recupera, entrena y vuelve más fuerte con un plan hecho para ti.</p>
           <div className="hero-actions"><a className="button" href="#contacto">Empieza hoy <span aria-hidden="true">↗</span></a><a className="text-link" href="#servicios">Descubre el centro <span aria-hidden="true">↓</span></a></div>
         </div>
-        <div className="hero-art" aria-hidden="true"><div className="pulse-line" /><p>ALTA<br />FRECUENCIA</p><span>01 — MOVIMIENTO</span></div>
+        <div className="hero-art" aria-hidden="true"><p>ALTA<br />FRECUENCIA</p><span>01 — MOVIMIENTO</span></div>
         <p className="hero-index" aria-hidden="true">AF / 01</p>
       </section>
 
       <section className="intro section" id="centro">
         <div className="section-label"><span>02</span> UNA MISMA DIRECCIÓN</div>
         <div className="intro-content">
-          <p className="big-statement">Moverte sin miedo.<br />Entrenar con sentido.<br /><em>Vivir a tu ritmo.</em></p>
+          <p className="big-statement">Moverte sin miedo<br />Entrenar con sentido<br /><em>Vivir a tu ritmo</em></p>
           <div className="intro-aside"><p>En Alta Frecuencia conectamos fisioterapia y entrenamiento para que no tengas que elegir entre recuperarte y avanzar.</p><p>No trabajamos solo donde duele. Miramos el conjunto, explicamos el proceso y construimos contigo una solución que encaje en tu día a día.</p></div>
         </div>
       </section>
 
       <section className="services section" id="servicios">
-        <div className="section-head"><div className="section-label light"><span>03</span> QUÉ HACEMOS</div><h2>Todo lo que necesitas<br />para volver a moverte.</h2></div>
+        <div className="section-head"><div className="section-label light"><span>03</span> QUÉ HACEMOS</div><h2>Todo lo que necesitas para<br />volver a moverte</h2></div>
         <div className="service-grid">
           {services.map((service) => (
             <article className="service-card" key={service.number}>
@@ -54,12 +54,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="signal" aria-label="Nuestro enfoque"><div className="signal-mark" aria-hidden="true"><Image src="/brand/imago.png" alt="" width={283} height={154} /></div><p>Tu progreso tiene una frecuencia.<br /><span>Vamos a encontrarla.</span></p></section>
+      <section className="signal" aria-label="Nuestro enfoque"><p>Tu progreso tiene una frecuencia<br /><span>Vamos a encontrarla</span></p></section>
 
       <section className="method section" id="metodo">
         <div className="section-label"><span>04</span> EL MÉTODO</div>
         <div className="method-layout">
-          <div className="method-title"><h2>Un plan claro.<br />Un equipo contigo.</h2><p>Menos recetas genéricas. Más decisiones basadas en ti.</p></div>
+          <div className="method-title"><h2>Un plan claro<br />Un equipo contigo</h2><p>Menos recetas genéricas. Más decisiones basadas en ti.</p></div>
           <ol className="steps">{steps.map(([number, title, copy]) => <li key={number}><span className="step-number">{number}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
         </div>
       </section>
@@ -71,10 +71,10 @@ export default function Home() {
 
       <section className="contact section" id="contacto">
         <div className="contact-copy"><div className="section-label"><span>06</span> EMPEZAMOS</div><h2>¿Hablamos<br />de tu objetivo?</h2><p>Cuéntanos qué necesitas y te ayudaremos a elegir el mejor punto de partida.</p></div>
-        <div className="contact-panel"><p className="contact-kicker">Primera valoración</p><h3>Da el primer paso.</h3><p>Próximamente podrás reservar directamente desde aquí.</p><a className="button contact-button" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a><div className="contact-details"><span>Teléfono y WhatsApp<br /><strong>Por confirmar</strong></span><span>Dirección del centro<br /><strong>Por confirmar</strong></span></div></div>
+        <div className="contact-panel"><p className="contact-kicker">Primera valoración</p><h3>Da el primer paso</h3><p>Próximamente podrás reservar directamente desde aquí.</p><a className="button contact-button" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a><div className="contact-details"><span>Teléfono y WhatsApp<br /><strong>Por confirmar</strong></span><span>Dirección del centro<br /><strong>Por confirmar</strong></span></div></div>
       </section>
 
-      <footer><Image src="/brand/logo-tag.png" alt="Alta Frecuencia" width={700} height={154} /><div><span>Fisioterapia</span><span>Entrenamiento personal</span><span>Recuperación activa</span></div><p>© {new Date().getFullYear()} Alta Frecuencia</p></footer>
+      <footer><div className="footer-main"><Image src="/brand/logo-tag.png" alt="Alta Frecuencia" width={700} height={154} /><div className="footer-services"><span>Fisioterapia</span><span>Entrenamiento personal</span><span>Recuperación activa</span></div></div><p>© {new Date().getFullYear()} Alta Frecuencia</p></footer>
     </main>
   );
 }
