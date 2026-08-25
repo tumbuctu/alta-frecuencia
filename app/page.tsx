@@ -18,7 +18,12 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
-        <nav aria-label="Navegación principal"><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#centro">El centro</a></nav>
+        <details className="menu">
+          <summary aria-label="Abrir menú de navegación"><span className="menu-icon" aria-hidden="true"><i /><i /><i /></span></summary>
+          <div className="menu-panel">
+            <nav className="menu-nav" aria-label="Navegación principal"><a href="#servicios"><span>01</span> Servicios</a><a href="#metodo"><span>02</span> Método</a><a href="#centro"><span>03</span> El centro</a></nav>
+          </div>
+        </details>
         <a className="button button-small" href="#contacto">Pide cita</a>
       </header>
 
