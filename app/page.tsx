@@ -17,13 +17,15 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
-        <details className="menu">
-          <summary aria-label="Abrir menú de navegación"><span className="menu-icon" aria-hidden="true"><i /><i /><i /></span></summary>
-          <div className="menu-panel">
-            <nav className="menu-nav" aria-label="Navegación principal"><a href="#servicios"><span>01</span> Servicios</a><a href="#metodo"><span>02</span> Método</a><a href="#centro"><span>03</span> El centro</a></nav>
-          </div>
-        </details>
+        <div className="header-left">
+          <details className="menu">
+            <summary aria-label="Abrir menú de navegación"><span className="menu-icon" aria-hidden="true"><i /><i /><i /></span></summary>
+            <div className="menu-panel">
+              <nav className="menu-nav" aria-label="Navegación principal"><a href="#servicios"><span>01</span> Servicios</a><a href="#metodo"><span>02</span> Método</a><a href="#centro"><span>03</span> El centro</a></nav>
+            </div>
+          </details>
+          <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
+        </div>
         <a className="button button-small" href="#contacto">Pide cita</a>
       </header>
 
@@ -32,10 +34,9 @@ export default function Home() {
           <p className="eyebrow">Fisioterapia · Entrenamiento personal</p>
           <h1>Tu cuerpo no para<br /><span>Nosotros tampoco</span></h1>
           <p className="hero-text">Recupera, entrena y vuelve más fuerte con un plan hecho para ti.</p>
-          <div className="hero-actions"><a className="button" href="#contacto">Empieza hoy <span aria-hidden="true">↗</span></a><a className="text-link" href="#servicios">Descubre el centro <span aria-hidden="true">↓</span></a></div>
+          <div className="hero-actions"><a className="button" href="#contacto">Empieza hoy <span className="arrow-icon" aria-hidden="true" /></a><a className="text-link" href="#servicios">Descubre el centro <span className="arrow-icon arrow-down" aria-hidden="true" /></a></div>
         </div>
         <div className="hero-art" aria-hidden="true"><p>ALTA<br />FRECUENCIA</p><span>01 — MOVIMIENTO</span></div>
-        <p className="hero-index" aria-hidden="true">AF / 01</p>
       </section>
 
       <section className="intro section" id="centro">
@@ -51,7 +52,7 @@ export default function Home() {
         <div className="service-grid">
           {services.map((service) => (
             <article className="service-card" key={service.number}>
-              <div className="card-top"><span>{service.number}</span><span className="card-arrow" aria-hidden="true">↗</span></div>
+              <div className="card-top"><span>{service.number}</span><span className="arrow-icon card-arrow" aria-hidden="true" /></div>
               <h3>{service.title}</h3><p>{service.copy}</p>
               <ul aria-label={`Incluye ${service.title}`}>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
             </article>
@@ -76,7 +77,7 @@ export default function Home() {
 
       <section className="contact section" id="contacto">
         <div className="contact-copy"><div className="section-label"><span>06</span> EMPEZAMOS</div><h2>¿Hablamos<br />de tu objetivo?</h2><p>Cuéntanos qué necesitas y te ayudaremos a elegir el mejor punto de partida.</p></div>
-        <div className="contact-panel"><p className="contact-kicker">Primera valoración</p><h3>Da el primer paso</h3><p>Próximamente podrás reservar directamente desde aquí.</p><a className="button contact-button" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a><div className="contact-details"><span>Teléfono y WhatsApp<br /><strong>Por confirmar</strong></span><span>Dirección del centro<br /><strong>Por confirmar</strong></span></div></div>
+        <div className="contact-panel"><p className="contact-kicker">Primera valoración</p><h3>Da el primer paso</h3><p>Próximamente podrás reservar directamente desde aquí.</p><a className="button contact-button" href="#inicio">Volver arriba <span className="arrow-icon arrow-up" aria-hidden="true" /></a><div className="contact-details"><span>Teléfono y WhatsApp<br /><strong>Por confirmar</strong></span><span>Dirección del centro<br /><strong>Por confirmar</strong></span></div></div>
       </section>
 
       <footer><div className="footer-main"><Image src="/brand/logo-tag.png" alt="Alta Frecuencia" width={700} height={154} /><div className="footer-services"><span>Fisioterapia</span><span>Entrenamiento personal</span><span>Recuperación activa</span></div></div><p>© {new Date().getFullYear()} Alta Frecuencia</p></footer>
