@@ -42,7 +42,7 @@ button, summary { font: inherit; }
 .hero { min-height: 790px; padding: 128px clamp(20px, 4vw, 68px) 56px; display: flex; flex-direction: column; justify-content: space-between; background: var(--ink); color: var(--paper); }
 .hero-meta { display: flex; justify-content: space-between; gap: 30px; color: var(--paper); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .hero-meta span:first-child::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 10px; background: var(--red); border-radius: 50%; }
-.hero-copy h1 { max-width: 1400px; margin: 70px 0 42px; font-family: "Avenir Next Condensed", "Arial Narrow", Avenir, sans-serif; font-size: clamp(70px, 9.8vw, 168px); font-weight: 800; line-height: .8; letter-spacing: -.055em; text-transform: uppercase; }
+.hero-copy h1 { max-width: 1400px; margin: 70px 0 42px; font-family: "Avenir Next Condensed", "Arial Narrow", Avenir, sans-serif; font-size: clamp(70px, 9.8vw, 168px); font-weight: 800; line-height: .86; letter-spacing: -.035em; text-transform: uppercase; }
 .hero-copy h1 span { color: var(--red); }
 .hero-bottom { display: flex; align-items: end; justify-content: space-between; gap: 60px; }
 .hero-bottom > p { max-width: 470px; margin: 0; font-size: clamp(16px, 1.2vw, 20px); }
@@ -109,12 +109,14 @@ button, summary { font: inherit; }
 .training-card { min-height: 660px; padding: clamp(27px, 3vw, 46px); display: flex; flex-direction: column; border: 1px solid var(--line); }
 .training-card > small { margin: 16px 0; }
 .training-card .pill-link { width: 100%; margin-top: auto; }
-table { width: 100%; margin: 24px 0; border-collapse: collapse; font-size: 13px; }
-th { padding: 13px 8px; border-bottom: 1px solid currentColor; font-size: 9px; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
-td { padding: 14px 8px; border-bottom: 1px solid var(--line); }
+table { width: 100%; margin: 24px 0; table-layout: fixed; border-collapse: collapse; font-size: 15px; }
+th { padding: 14px 8px; border-bottom: 1px solid currentColor; font-size: 10.5px; letter-spacing: .08em; text-align: left; text-transform: uppercase; }
+td { padding: 16px 8px; border-bottom: 1px solid var(--line); }
 th:last-child, td:last-child { text-align: right; }
+.training-card table { font-size: 16px; }
+.training-card th { font-size: 11px; }
 .semi-private { margin-top: 14px; padding: clamp(32px, 4vw, 62px); display: grid; grid-template-columns: 1.15fr .85fr; gap: 8vw; color: var(--paper); background: var(--ink); }
-.semi-private h3 { margin: 0 0 28px; font-family: "Avenir Next Condensed", "Arial Narrow", Avenir, sans-serif; font-size: clamp(45px, 5vw, 80px); font-weight: 800; line-height: .9; text-transform: uppercase; }
+.semi-private h3 { margin: 0 0 28px; font-family: "Avenir Next Condensed", "Arial Narrow", Avenir, sans-serif; font-size: clamp(45px, 5vw, 80px); font-weight: 800; line-height: .98; text-transform: uppercase; }
 .semi-private .info-note { background: rgba(61,184,196,.11); }
 .semi-private td { border-bottom-color: var(--dark-line); }
 .semi-private small { display: block; margin-bottom: 28px; }
@@ -183,7 +185,7 @@ footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); backgro
   .hero { min-height: 680px; padding-top: 110px; }
   .hero-meta { font-size: 9px; }
   .hero-meta span:last-child { display: none; }
-  .hero-copy h1 { margin-top: 55px; font-size: clamp(54px, 15.5vw, 100px); line-height: .85; }
+  .hero-copy h1 { margin-top: 55px; font-size: clamp(54px, 15.5vw, 100px); line-height: .9; }
   .hero-bottom { align-items: start; flex-direction: column; gap: 30px; }
   .marquee { justify-content: flex-start; }
   .split-intro, .method, .space, .readaptation, .faq, .contact { grid-template-columns: 1fr; }
