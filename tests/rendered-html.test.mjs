@@ -15,9 +15,11 @@ test("renders the Alta Frecuencia landing page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Alta Frecuencia \| Fisioterapia y Entrenamiento Personal/);
-  assert.match(html, /Tu cuerpo no para/);
+  assert.match(html, /Muévete/);
+  assert.match(html, /Vuelve más fuerte/);
   assert.match(html, /Fisioterapia/);
   assert.match(html, /Entrenamiento personal/);
   assert.match(html, /El método/i);
+  assert.match(html, /Valoración inicial: 50 €/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });

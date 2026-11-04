@@ -1,17 +1,38 @@
 import Image from "next/image";
 
-const services = [
-  { number: "01", title: "Fisioterapia", copy: "Valoramos el origen, tratamos la lesión y te acompañamos hasta recuperar seguridad en el movimiento.", tags: ["Valoración", "Tratamiento", "Readaptación"] },
-  { number: "02", title: "Entrenamiento personal", copy: "Sesiones diseñadas alrededor de tu punto de partida, tus objetivos y la vida que quieres llevar.", tags: ["Fuerza", "Movilidad", "Rendimiento"] },
-  { number: "03", title: "Recuperación activa", copy: "El puente entre la camilla y el entrenamiento para volver a hacer lo que te gusta con confianza.", tags: ["Progresión", "Control", "Vuelta a la actividad"] },
+const paths = [
+  { number: "01 / RECUPERA", title: "Fisioterapia", copy: "Valoración, tratamiento y ejercicio terapéutico para abordar tu problema y recuperar tu función.", link: "Conoce cómo trabajamos", href: "#fisioterapia" },
+  { number: "02 / MUÉVETE", title: "Entrenamiento personal", copy: "Individual, en pareja o semiprivado. Entrena con una planificación y atención adaptadas a tus objetivos.", link: "Encuentra tu formato", href: "#entrenamiento" },
+  { number: "03 / VUELVE MÁS FUERTE", title: "Readaptación deportiva", copy: "Un proceso progresivo entre la rehabilitación y las exigencias reales de tu deporte.", link: "Prepara tu vuelta", href: "#readaptacion" },
 ];
 
-const steps = [
-  ["01", "Te escuchamos", "Entendemos tu historia, tus síntomas y qué quieres volver a hacer."],
-  ["02", "Valoramos", "Analizamos cómo te mueves y definimos un punto de partida real."],
-  ["03", "Trazamos el plan", "Unimos tratamiento y ejercicio con objetivos claros y medibles."],
-  ["04", "Evolucionamos", "Ajustamos el proceso contigo para que el progreso se mantenga."],
+const physioServices = [
+  { kicker: "Terapia manual", title: "Masaje descontracturante", price: "30 €", unit: "/ 30 minutos", copy: "Tratamiento manual centrado en las zonas de mayor tensión muscular, orientado a aliviar molestias y mejorar tu sensación de movilidad y bienestar.", cta: "Reserva tu masaje" },
+  { kicker: "Valoración y tratamiento", title: "Sesión de fisioterapia", price: "40 €", unit: "/ 60 minutos", copy: "Un tratamiento individualizado que puede combinar terapia manual, ejercicio terapéutico, valoración ecográfica, punción seca, neuromodulación invasiva y radiofrecuencia Winback, según la valoración clínica.", note: "Las técnicas indicadas están incluidas en el precio de la sesión.", cta: "Reserva tu sesión" },
+  { kicker: "Movimiento y autonomía", title: "Fisioterapia neurológica", price: "40 €", unit: "/ sesión", copy: "Atención individualizada para personas con alteraciones del movimiento asociadas a una condición neurológica. Trabajamos movilidad, fuerza, equilibrio y coordinación con objetivos orientados a mejorar la autonomía y facilitar las actividades cotidianas.", cta: "Consulta tu caso" },
 ];
+
+const methodSteps = [
+  ["01", "Entender qué necesitas", "Empezamos con tu historia, tus síntomas y una valoración funcional. La ecografía musculoesquelética puede complementar la exploración cuando está indicada."],
+  ["02", "Un plan con sentido", "Combinamos ejercicio terapéutico y las técnicas que requiera tu caso: terapia manual, punción seca o neuromodulación, según la valoración clínica."],
+  ["03", "Medir para progresar", "Valoramos la fuerza con dinamometría Active Force 2 y seguimos tu evolución para ajustar las cargas y orientar tu vuelta a la actividad y al deporte."],
+];
+
+const faqs = [
+  ["¿Puedo empezar si nunca he entrenado?", "Sí. Partimos de tu nivel actual y organizamos una progresión adaptada para que empieces con seguridad y confianza."],
+  ["¿Y si tengo una lesión o dolor?", "Valoramos tu situación y adaptamos el ejercicio. Cuando está indicado, integramos fisioterapia en el mismo proceso."],
+  ["¿Qué diferencia hay entre personal y semiprivado?", "En el entrenamiento personal toda la sesión se centra en ti. En el semiprivado compartes espacio con un máximo de cuatro personas, manteniendo tu propio plan."],
+  ["¿El entrenamiento incluye fisioterapia en camilla?", "Sí, cuando está indicada se integra en el programa de entrenamiento personal o en pareja sin coste adicional."],
+  ["¿Quién supervisa el entrenamiento semiprivado?", "Un profesional con doble titulación en Fisioterapia y Ciencias de la Actividad Física y del Deporte (CAFYD)."],
+  ["¿Puedo recuperar una sesión?", "Sí, con un preaviso mínimo de 24 horas, según disponibilidad y dentro de la vigencia del bono."],
+  ["¿Cómo se prepara la vuelta al deporte?", "Con una progresión de fuerza, movilidad, control del movimiento y tareas específicas, ajustada a tu lesión, evolución y deporte."],
+];
+
+function Arrow() { return <span className="arrow-icon" aria-hidden="true" />; }
+
+function CtaLink({ children, href = "#contacto", dark = false }: { children: React.ReactNode; href?: string; dark?: boolean }) {
+  return <a className={`pill-link${dark ? " pill-link-dark" : ""}`} href={href}><span>{children}</span><Arrow /></a>;
+}
 
 export default function Home() {
   return (
@@ -20,67 +41,68 @@ export default function Home() {
         <div className="header-left">
           <details className="menu">
             <summary aria-label="Abrir menú de navegación"><span className="menu-icon" aria-hidden="true"><i /><i /><i /></span></summary>
-            <div className="menu-panel">
-              <nav className="menu-nav" aria-label="Navegación principal"><a href="#servicios"><span>01</span> Servicios</a><a href="#metodo"><span>02</span> Método</a><a href="#centro"><span>03</span> El centro</a></nav>
-            </div>
+            <div className="menu-panel"><nav className="menu-nav" aria-label="Navegación principal"><a href="#que-hacemos"><span>01</span> Qué hacemos</a><a href="#tarifas"><span>02</span> Servicios y tarifas</a><a href="#entrenamiento"><span>03</span> Entrenamiento</a></nav></div>
           </details>
           <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
         </div>
-        <a className="button button-small" href="#contacto">Pide cita</a>
+        <nav className="desktop-nav" aria-label="Navegación principal"><a href="#que-hacemos">Qué hacemos</a><a href="#tarifas">Servicios y tarifas</a><a href="#entrenamiento">Entrenamiento</a></nav>
+        <CtaLink href="#contacto" dark>Empezamos</CtaLink>
       </header>
 
       <section className="hero" id="inicio">
+        <div className="hero-meta"><span>Fisioterapia y entrenamiento · Murcia</span><span>Tu siguiente paso empieza aquí</span></div>
         <div className="hero-copy">
-          <p className="eyebrow">Fisioterapia · Entrenamiento personal</p>
-          <h1>Tu cuerpo no para<br /><span>Nosotros tampoco</span></h1>
-          <p className="hero-text">Recupera, entrena y vuelve más fuerte con un plan hecho para ti.</p>
-          <div className="hero-actions"><a className="button" href="#contacto">Empieza hoy <span className="arrow-icon" aria-hidden="true" /></a><a className="text-link" href="#servicios">Descubre el centro <span className="arrow-icon arrow-down" aria-hidden="true" /></a></div>
-        </div>
-        <div className="hero-art" aria-hidden="true"><p>ALTA<br />FRECUENCIA</p><span>01 — MOVIMIENTO</span></div>
-      </section>
-
-      <section className="intro section" id="centro">
-        <div className="section-label"><span>02</span> UNA MISMA DIRECCIÓN</div>
-        <div className="intro-content">
-          <p className="big-statement">Moverte sin miedo<br />Entrenar con sentido<br /><em>Vivir a tu ritmo</em></p>
-          <div className="intro-aside"><p>En Alta Frecuencia conectamos fisioterapia y entrenamiento para que no tengas que elegir entre recuperarte y avanzar.</p><p>No trabajamos solo donde duele. Miramos el conjunto, explicamos el proceso y construimos contigo una solución que encaje en tu día a día.</p></div>
+          <h1>Muévete<br />Recupera<br /><span>Vuelve más fuerte</span></h1>
+          <div className="hero-bottom"><p>Unimos fisioterapia y ejercicio para ayudarte a recuperar la confianza en tu cuerpo y avanzar hacia tus objetivos.</p><CtaLink href="#que-hacemos">Encuentra tu camino</CtaLink></div>
         </div>
       </section>
 
-      <section className="services section" id="servicios">
-        <div className="section-head"><div className="section-label light"><span>03</span> QUÉ HACEMOS</div><h2>Todo lo que necesitas para<br />volver a moverte</h2></div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <div className="card-top"><span>{service.number}</span><span className="arrow-icon card-arrow" aria-hidden="true" /></div>
-              <h3>{service.title}</h3><p>{service.copy}</p>
-              <ul aria-label={`Incluye ${service.title}`}>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-            </article>
-          ))}
-        </div>
+      <div className="marquee" aria-label="Servicios de Alta Frecuencia"><span>Fisioterapia</span><i /><span>Entrenamiento personal</span><i /><span>Readaptación deportiva</span><i /><span>Alta Frecuencia</span></div>
+
+      <section className="intro section" id="que-hacemos">
+        <div className="split-intro"><p className="overline">01 / Nuestra forma de entenderlo</p><div><h2>No se trata solo<br />de entrenar<br />Se trata de <em>avanzar</em></h2><p className="lead">Recuperarte de una lesión. Volver a practicar tu deporte. Empezar a entrenar con acompañamiento. En Alta Frecuencia conectamos el tratamiento con el movimiento para construir un proceso adaptado a ti.</p></div></div>
+        <div className="section-heading line-heading"><h3>Tres caminos. Un equipo.</h3><a href="#fisioterapia">Encuentra el tuyo <Arrow /></a></div>
+        <div className="path-grid">{paths.map((path) => <article className="path-card" key={path.number}><small>{path.number}</small><div><h3>{path.title}</h3><p>{path.copy}</p><a href={path.href}>{path.link}<Arrow /></a></div></article>)}</div>
       </section>
 
-      <section className="signal" aria-label="Nuestro enfoque"><p>Tu progreso tiene una frecuencia<br /><span>Vamos a encontrarla</span></p></section>
+      <section className="physio section" id="fisioterapia">
+        <p className="overline">Tratamiento / Recupera movimiento</p><h2>Fisioterapia<br />adaptada a ti</h2><p className="lead wide">Valoramos tu situación y elegimos el abordaje que necesitas para aliviar molestias, recuperar tu función y moverte con mayor confianza.</p>
+        <div className="price-card-grid" id="tarifas">{physioServices.map((service) => <article className="price-card" key={service.title}><p className="card-kicker">{service.kicker}</p><h3>{service.title}</h3><p className="price"><strong>{service.price}</strong> <span>{service.unit}</span></p><p>{service.copy}</p>{service.note && <p className="info-note">{service.note}</p>}<CtaLink>{service.cta}</CtaLink></article>)}</div>
+      </section>
 
       <section className="method section" id="metodo">
-        <div className="section-label"><span>04</span> EL MÉTODO</div>
-        <div className="method-layout">
-          <div className="method-title"><h2>Un plan claro<br />Un equipo contigo</h2><p>Menos recetas genéricas. Más decisiones basadas en ti.</p></div>
-          <ol className="steps">{steps.map(([number, title, copy]) => <li key={number}><span className="step-number">{number}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
+        <div className="method-intro"><p className="overline">02 / El método Alta Frecuencia</p><h2>Escuchamos<br />Planificamos<br /><em>Avanzamos</em></h2><CtaLink href="#contacto">Hablemos de tu objetivo</CtaLink></div>
+        <ol className="method-steps">{methodSteps.map(([number, title, copy]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol>
+      </section>
+
+      <section className="space section">
+        <div className="space-photo"><Image src="/installations/training-room-wide.jpeg" alt="Sala de entrenamiento de Alta Frecuencia" width={1200} height={1600} priority unoptimized /></div>
+        <div className="space-copy"><p className="overline">03 / Tu espacio para mejorar</p><h2>Tu objetivo<br />Tu ritmo<br />Nuestra atención</h2><p className="lead">La fuerza se entrena. La confianza, también. Elige cómo quieres empezar y te acompañamos con una programación adaptada a tu punto de partida.</p><ul className="tags"><li>Entrenamiento individual</li><li>Entrenamiento en pareja</li><li>Semiprivado · máximo 4</li><li>Ejercicio terapéutico</li></ul><p>En el semiprivado entrenas en un grupo de máximo 4 personas, con tu propio plan y la supervisión de un profesional con doble titulación en Fisioterapia y CAFYD.</p><CtaLink href="#entrenamiento">Ver modalidades y tarifas</CtaLink></div>
+      </section>
+
+      <section className="training section" id="entrenamiento">
+        <div className="section-heading line-heading"><h2>Elige cómo avanzar</h2><span>Entrenamiento / Modalidades y tarifas</span></div><p className="lead wide">Para ganar fuerza, mejorar tu composición corporal, retomar el ejercicio o mantenerte activo. Tú marcas el objetivo; nosotros organizamos el camino y adaptamos la progresión.</p>
+        <div className="training-grid">
+          <article className="training-card"><p className="card-kicker">Atención individual</p><h3>Entrenamiento personal</h3><p>Una sesión centrada en ti, con supervisión continua y un programa adaptado a tu nivel, necesidades y evolución.</p><p className="info-note"><strong>Fisioterapia en camilla incluida</strong> cuando esté indicada, integrada en tu programa y sin coste adicional.</p><table><thead><tr><th>Frecuencia</th><th>Sesiones</th><th>Precio</th></tr></thead><tbody><tr><td>1/semana</td><td>4</td><td>160 €</td></tr><tr><td>2/semana</td><td>8</td><td>280 €</td></tr><tr><td>3/semana</td><td>12</td><td>380 €</td></tr></tbody></table><CtaLink>Empieza tu programa</CtaLink></article>
+          <article className="training-card training-card-wide"><p className="card-kicker">Dos personas / Atención personalizada</p><h3>Entrenamiento personal en pareja</h3><p>Entrenad juntos con un plan adaptado a cada uno. Ajustamos ejercicios, cargas y progresión a las capacidades y objetivos de cada persona.</p><p className="info-note"><strong>Fisioterapia en camilla incluida para ambos</strong> cuando esté indicada, integrada en el programa y sin coste adicional.</p><table><thead><tr><th>Frecuencia</th><th>Sesiones</th><th>Total pareja</th></tr></thead><tbody><tr><td>1/semana</td><td>4</td><td>245 €</td></tr><tr><td>2/semana</td><td>8</td><td>360 €</td></tr><tr><td>3/semana</td><td>12</td><td>530 €</td></tr></tbody></table><small>Precios totales por pareja, no por persona.</small><CtaLink>Empezad juntos</CtaLink></article>
         </div>
+        <article className="semi-private"><div><p className="card-kicker">Máximo 4 personas / Plan individualizado</p><h3>Tu propio plan<br />La energía del grupo</h3><p><strong>Entrenamiento personal semiprivado</strong> con un profesional que reúne las dos titulaciones: Fisioterapia y Ciencias de la Actividad Física y del Deporte (CAFYD).</p><p>Comparte espacio y motivación, con ejercicios, cargas y adaptaciones ajustados a ti. Tú vienes a entrenar; nosotros planificamos, te guiamos y ajustamos el trabajo según tu evolución.</p><ul className="feature-list"><li>Supervisión cercana</li><li>Progresión organizada</li><li>Adaptado a tu nivel</li></ul></div><div><p className="info-note">Para empezar, retomar el ejercicio o seguir mejorando con un seguimiento cercano y objetivos claros.</p><table><thead><tr><th>Frecuencia</th><th>Cuota por persona</th></tr></thead><tbody><tr><td>1 sesión / semana</td><td>60 € / mes</td></tr><tr><td>2 sesiones / semana</td><td>120 € / mes</td></tr><tr><td>3 sesiones / semana</td><td>160 € / mes</td></tr></tbody></table><small>Modalidad sujeta a pago mensual.</small><CtaLink>Consulta horarios y disponibilidad</CtaLink></div></article>
       </section>
 
-      <section className="principles section">
-        <div className="section-label light"><span>05</span> ALTA FRECUENCIA ES</div>
-        <div className="principles-list"><p><span>Precisión</span><small>Sabemos por qué hacemos cada cosa.</small></p><p><span>Cercanía</span><small>Te explicamos y te escuchamos.</small></p><p><span>Continuidad</span><small>Del dolor al rendimiento, sin saltos.</small></p></div>
+      <section className="readaptation section" id="readaptacion">
+        <div><p className="overline">Readaptación deportiva / Return to play</p><h2>Prepara tu vuelta<br />al deporte</h2><p className="lead">Un proceso progresivo para recuperar la fuerza, la movilidad y la confianza necesarias para volver a entrenar tras una lesión.</p><p>Partimos de una valoración y combinamos fuerza, control del movimiento y tareas específicas de tu deporte. Ajustamos las cargas según tu respuesta y las exigencias de tu actividad.</p><p className="info-note"><strong>Medir para progresar.</strong> Utilizamos dinamometría Active Force 2 para valorar la fuerza y seguir tu evolución, apoyando las decisiones sobre la progresión y la vuelta al deporte.</p><CtaLink>Consulta tu readaptación</CtaLink></div>
+        <div className="readaptation-table"><h3>Sesiones de readaptación</h3><table><thead><tr><th>Modalidad</th><th>Precio</th></tr></thead><tbody><tr><td>Sesión individual</td><td>40 €</td></tr><tr><td>2/semana · 8 sesiones</td><td>280 €</td></tr><tr><td>3/semana · 12 sesiones</td><td>380 €</td></tr></tbody></table><p>Una planificación adaptada a tu lesión, tu evolución y tu deporte.</p></div>
       </section>
 
-      <section className="contact section" id="contacto">
-        <div className="contact-copy"><div className="section-label"><span>06</span> EMPEZAMOS</div><h2>¿Hablamos<br />de tu objetivo?</h2><p>Cuéntanos qué necesitas y te ayudaremos a elegir el mejor punto de partida.</p></div>
-        <div className="contact-panel"><p className="contact-kicker">Primera valoración</p><h3>Da el primer paso</h3><p>Próximamente podrás reservar directamente desde aquí.</p><a className="button contact-button" href="#inicio">Volver arriba <span className="arrow-icon arrow-up" aria-hidden="true" /></a><div className="contact-details"><span>Teléfono y WhatsApp<br /><strong>Por confirmar</strong></span><span>Dirección del centro<br /><strong>Por confirmar</strong></span></div></div>
-      </section>
+      <section className="assessment section"><p className="overline">Tu punto de partida</p><h2>Valoración y seguimiento</h2><p className="lead wide"><strong>Valoración inicial: 50 €.</strong> Conocemos tus antecedentes, tu situación actual y tus objetivos para orientar el programa. Incluimos un control mensual de composición corporal mediante bioimpedancia en los programas de entrenamiento.</p><div className="conditions"><h3>Condiciones de los programas</h3><ul><li>Los bonos tienen una caducidad de un mes desde la fecha de contratación.</li><li>Posibilidad de recuperar sesiones con un preaviso mínimo de 24 horas, según disponibilidad y dentro de la vigencia del bono.</li><li>El entrenamiento semiprivado se contrata mediante cuota mensual.</li><li>Los precios del entrenamiento en pareja corresponden al total de las dos personas.</li></ul></div></section>
 
-      <footer><div className="footer-main"><Image src="/brand/logo-tag.png" alt="Alta Frecuencia" width={700} height={154} /><div className="footer-services"><span>Fisioterapia</span><span>Entrenamiento personal</span><span>Recuperación activa</span></div></div><p>© {new Date().getFullYear()} Alta Frecuencia</p></footer>
+      <section className="gallery section" id="centro"><div className="section-heading line-heading"><h2>Dentro de Alta Frecuencia</h2><span>Un espacio para ti</span></div><div className="gallery-grid"><figure><Image src="/installations/training-room-wide.jpeg" alt="Vista general de la sala de entrenamiento" width={1200} height={1600} loading="eager" unoptimized /><figcaption>01 / Vista general de la sala de entrenamiento</figcaption></figure><figure><Image src="/installations/physio-room.jpeg" alt="Consulta de fisioterapia con camilla" width={1536} height={2048} loading="eager" unoptimized /><figcaption>02 / Consulta de fisioterapia con camilla</figcaption></figure><figure><Image src="/installations/rack-and-bench.jpeg" alt="Banco y rack para trabajo de fuerza" width={1200} height={1600} loading="eager" unoptimized /><figcaption>03 / Banco y rack para trabajo de fuerza</figcaption></figure><figure><Image src="/installations/strength-area.jpeg" alt="Material de fuerza de Alta Frecuencia" width={1200} height={1600} loading="eager" unoptimized /><figcaption>04 / Material de fuerza y discos de Alta Frecuencia</figcaption></figure></div></section>
+
+      <section className="faq section"><div><p className="overline">Antes de dar el paso</p><h2>Resolvemos<br />tus dudas</h2></div><div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
+
+      <section className="contact section" id="contacto"><div><p className="overline">Alta Frecuencia · Murcia</p><h2>El siguiente<br />paso es tuyo</h2></div><div><p>Cuéntanos qué quieres recuperar, mejorar o conseguir. Encontraremos el punto de partida.</p><CtaLink href="#inicio" dark>Empezar en Alta Frecuencia</CtaLink></div></section>
+
+      <footer><div className="footer-top"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} /><p>Fisioterapia. Fuerza. Movimiento.<br />Murcia, España.</p></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Alta Frecuencia</span><span>Muévete, recupera, vuelve más fuerte.</span><a href="#inicio">Volver arriba <Arrow /></a></div></footer>
     </main>
   );
 }

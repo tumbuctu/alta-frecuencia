@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Alta Frecuencia | Fisioterapia y Entrenamiento Personal",
-  description: "Fisioterapia, entrenamiento personal y recuperación activa. Recupera, entrena y vuelve más fuerte con un plan hecho para ti.",
+  description: "Fisioterapia, entrenamiento personal y readaptación deportiva en Murcia. Muévete, recupera y vuelve más fuerte.",
   icons: {
     icon: "/brand/imago.png",
     shortcut: "/brand/imago.png",
