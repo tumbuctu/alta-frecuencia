@@ -25,11 +25,11 @@ html = html
   .replace(/<link\b[^>]*rel=["']modulepreload["'][^>]*\/?>(?:\s*)/gi, "")
   .replace(/<link\b(?=[^>]*rel=["']preload["'])(?=[^>]*imageSrcSet)[^>]*\/?>/gi, "")
   .replace(/\s(?:imageSrcSet|srcSet)=["'][^"']*["']/gi, "")
-  .replace(/src=["']\/_next\/image\?url=([^&"']+)(?:&amp;[^"']*)?["']/gi, (_, source) => `src="${decodeURIComponent(source)}"`)
-  .replace(/\b(href|src)=["']\/(?!\/)/g, '$1="/alta-frecuencia/');
+  .replace(/src=["']\/_next\/image\?url=([^&"']+)(?:&amp;[^"']*)?["']/gi, (_, source) => `src="${decodeURIComponent(source)}"`);
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(new URL("../dist/client/", import.meta.url), output, { recursive: true });
 await writeFile(new URL("index.html", output), html);
 await writeFile(new URL(".nojekyll", output), "");
+await writeFile(new URL("CNAME", output), "alta-frecuencia.com\n");
