@@ -7,7 +7,6 @@ const paths = [
 ];
 
 const physioServices = [
-  { kicker: "Terapia manual", title: "Masaje descontracturante", price: "30 €", unit: "/ 30 minutos", copy: "Tratamiento manual centrado en las zonas de mayor tensión muscular, orientado a aliviar molestias y mejorar tu sensación de movilidad y bienestar.", cta: "Reserva tu masaje" },
   { kicker: "Valoración y tratamiento", title: "Sesión de fisioterapia", price: "40 €", unit: "/ 60 minutos", copy: "Un tratamiento individualizado que puede combinar terapia manual, ejercicio terapéutico, valoración ecográfica, punción seca, neuromodulación invasiva y radiofrecuencia Winback, según la valoración clínica.", note: "Las técnicas indicadas están incluidas en el precio de la sesión.", cta: "Reserva tu sesión" },
   { kicker: "Movimiento y autonomía", title: "Fisioterapia neurológica", price: "40 €", unit: "/ sesión", copy: "Atención individualizada para personas con alteraciones del movimiento asociadas a una condición neurológica. Trabajamos movilidad, fuerza, equilibrio y coordinación con objetivos orientados a mejorar la autonomía y facilitar las actividades cotidianas.", cta: "Consulta tu caso" },
 ];
