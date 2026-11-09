@@ -162,7 +162,7 @@ th:last-child, td:last-child { text-align: right; }
 .contact-map-block { grid-column: 1 / -1; }
 .contact-map { width: 100%; height: clamp(360px, 34vw, 520px); border: 1px solid var(--ink); background: var(--ink); }
 .contact-map iframe { width: 100%; height: 100%; display: block; border: 0; }
-.contact-languages { margin: 24px 0 0; text-align: center; font-size: clamp(14px, 1.2vw, 17px); font-weight: 800; letter-spacing: .035em; }
+.contact-languages { margin: 34px 0 0; color: var(--paper); text-align: center; font-size: clamp(14px, 1.3vw, 18px); font-weight: 800; letter-spacing: .065em; line-height: 1.7; word-spacing: .18em; }
 
 footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); background: var(--ink); }
 .footer-top { min-height: 150px; display: flex; align-items: start; justify-content: space-between; gap: 40px; }

@@ -141,7 +141,7 @@ export default function Home() {
               allowFullScreen
             />
           </div>
-          <p className="contact-languages">Atendemos en Español, Inglés, Francés, Italiano y Árabe</p>
+          <p className="contact-languages">Atendemos en Español — Inglés — Francés — Italiano — Árabe</p>
         </div>
       </section>
 
