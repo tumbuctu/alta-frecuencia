@@ -38,10 +38,6 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="header-left">
-          <details className="menu">
-            <summary aria-label="Abrir menú de navegación"><span className="menu-icon" aria-hidden="true"><i /><i /><i /></span></summary>
-            <div className="menu-panel"><nav className="menu-nav" aria-label="Navegación principal"><a href="#que-hacemos"><span>01</span> Qué hacemos</a><a href="#tarifas"><span>02</span> Servicios y tarifas</a><a href="#entrenamiento"><span>03</span> Entrenamiento</a></nav></div>
-          </details>
           <a className="brand" href="#inicio" aria-label="Alta Frecuencia, inicio"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} priority /></a>
         </div>
         <nav className="desktop-nav" aria-label="Navegación principal"><a href="#que-hacemos">Qué hacemos</a><a href="#tarifas">Servicios y tarifas</a><a href="#entrenamiento">Entrenamiento</a></nav>

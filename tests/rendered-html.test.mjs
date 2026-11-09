@@ -21,6 +21,7 @@ test("renders the Alta Frecuencia landing page", async () => {
   assert.match(html, /Entrenamiento personal/);
   assert.match(html, /El método/i);
   assert.match(html, /Valoración inicial: 50 €/);
+  assert.doesNotMatch(html, /Abrir menú de navegación/i);
   assert.doesNotMatch(html, /Masaje descontracturante/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
