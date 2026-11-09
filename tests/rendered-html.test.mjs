@@ -21,6 +21,10 @@ test("renders the Alta Frecuencia landing page", async () => {
   assert.match(html, /Entrenamiento personal/);
   assert.match(html, /El método/i);
   assert.match(html, /Valoración inicial: 50 €/);
+  assert.match(html, /wa\.me\/34630533323/);
+  assert.match(html, /tel:\+34630533323/);
+  assert.match(html, /mailto:altafrecuencia@gmail\.com/);
+  assert.match(html, /Ubicación de Alta Frecuencia en Murcia/);
   assert.doesNotMatch(html, /Abrir menú de navegación/i);
   assert.doesNotMatch(html, /Masaje descontracturante/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);

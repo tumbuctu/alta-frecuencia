@@ -139,12 +139,24 @@ th:last-child, td:last-child { text-align: right; }
 .faq-list details[open] summary span::after { transform: rotate(0); }
 .faq-list details p { margin: 0; padding: 0 55px 25px 2px; color: rgba(6,31,41,.74); }
 
-.contact { display: grid; grid-template-columns: 1.35fr .65fr; gap: 8vw; align-items: end; color: var(--ink); background: var(--red); }
-.contact h2 { margin-bottom: 0; font-size: clamp(64px, 8vw, 134px); }
-.contact > div:last-child { padding-bottom: 10px; }
-.contact > div:last-child p { max-width: 470px; margin: 0 0 30px; font-size: 19px; }
-.contact .pill-link-dark { border-color: var(--ink); }
-.contact .pill-link-dark:hover { color: var(--ink); background: var(--paper); border-color: var(--paper); }
+.contact { color: var(--ink); background: var(--red); }
+.contact h2 { margin-bottom: 38px; font-size: clamp(64px, 8vw, 134px); }
+.contact-intro { max-width: 680px; margin: 0; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.5; }
+.contact-layout { margin-top: clamp(48px, 7vw, 92px); display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 74px); align-items: stretch; }
+.contact-details { border-top: 1px solid rgba(6,31,41,.45); }
+.contact-address { padding: 27px 0 31px; border-bottom: 1px solid rgba(6,31,41,.45); }
+.contact-address > span { display: block; margin-bottom: 12px; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.contact-address strong { display: block; margin-bottom: 10px; font-family: "Avenir Next Condensed", "Arial Narrow", Avenir, sans-serif; font-size: clamp(29px, 3vw, 42px); line-height: 1; text-transform: uppercase; }
+.contact-address a { display: inline-block; font-size: 17px; font-weight: 650; line-height: 1.55; transition: opacity .2s ease; }
+.contact-address a:hover { opacity: .65; }
+.contact-links a { min-height: 75px; padding: 18px 2px; display: grid; grid-template-columns: 92px minmax(0, 1fr) 18px; align-items: center; gap: 18px; border-bottom: 1px solid rgba(6,31,41,.45); transition: padding .2s ease, background .2s ease; }
+.contact-links a:hover { padding-right: 14px; padding-left: 14px; background: rgba(243,241,233,.18); }
+.contact-links span { font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.contact-links strong { overflow-wrap: anywhere; font-size: clamp(15px, 1.35vw, 19px); }
+.contact-map { min-height: 480px; display: grid; grid-template-rows: 1fr auto; border: 1px solid var(--ink); background: var(--ink); }
+.contact-map iframe { width: 100%; height: 100%; min-height: 420px; display: block; border: 0; }
+.contact-map > a { min-height: 62px; padding: 17px 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--paper); font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; transition: color .2s ease, background .2s ease; }
+.contact-map > a:hover { color: var(--ink); background: var(--paper); }
 
 footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); background: var(--ink); }
 .footer-top { min-height: 150px; display: flex; align-items: start; justify-content: space-between; gap: 40px; }
@@ -174,7 +186,7 @@ footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); backgro
   .hero-copy h1 { margin-top: 55px; font-size: clamp(54px, 15.5vw, 100px); line-height: .9; }
   .hero-bottom { align-items: start; flex-direction: column; gap: 30px; }
   .marquee { justify-content: flex-start; }
-  .split-intro, .method, .space, .readaptation, .faq, .contact { grid-template-columns: 1fr; }
+  .split-intro, .method, .space, .readaptation, .faq { grid-template-columns: 1fr; }
   .split-intro { gap: 30px; }
   .path-grid, .price-card-grid { grid-template-columns: 1fr; }
   .path-card { min-height: 390px; }
@@ -188,8 +200,9 @@ footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); backgro
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 12px; }
   .gallery img { height: 390px; }
   .faq { gap: 45px; }
-  .contact { align-items: start; }
-  .contact > div:last-child { padding: 0; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-map { min-height: 430px; }
+  .contact-map iframe { min-height: 365px; }
 }
 
 @media (max-width: 520px) {
@@ -221,7 +234,10 @@ footer { padding: 65px clamp(20px, 4vw, 68px) 28px; color: var(--paper); backgro
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery img { height: 470px; }
   .contact h2 { font-size: 16vw; }
-  .contact .pill-link { width: 100%; }
+  .contact-links a { grid-template-columns: minmax(0, 1fr) 18px; gap: 7px 16px; }
+  .contact-links a > span { grid-column: 1 / -1; }
+  .contact-map { min-height: 390px; }
+  .contact-map iframe { min-height: 325px; }
   .footer-top { min-height: 180px; flex-direction: column; }
   .footer-top img { width: 250px; max-width: 80vw; }
   .footer-bottom { flex-direction: column; gap: 12px; }

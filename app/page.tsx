@@ -95,7 +95,39 @@ export default function Home() {
 
       <section className="faq section"><div><p className="overline">Antes de dar el paso</p><h2>Resolvemos<br />tus dudas</h2></div><div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
 
-      <section className="contact section" id="contacto"><div><p className="overline">Alta Frecuencia · Murcia</p><h2>El siguiente<br />paso es tuyo</h2></div><div><p>Cuéntanos qué quieres recuperar, mejorar o conseguir. Encontraremos el punto de partida.</p><CtaLink href="#inicio" dark>Empezar en Alta Frecuencia</CtaLink></div></section>
+      <section className="contact section" id="contacto">
+        <div className="contact-heading">
+          <p className="overline">Alta Frecuencia · Murcia</p>
+          <h2>El siguiente<br />paso es tuyo</h2>
+          <p className="contact-intro">Cuéntanos qué quieres recuperar, mejorar o conseguir. Encontraremos el punto de partida.</p>
+        </div>
+        <div className="contact-layout">
+          <div className="contact-details">
+            <div className="contact-address">
+              <span>Centro de fisioterapia y entrenamiento</span>
+              <strong>Alta Frecuencia</strong>
+              <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+Alfonso+X+el+Sabio+11+30008+Murcia" target="_blank" rel="noreferrer">
+                Gran Vía Alfonso X el Sabio, 11, entresuelo A<br />30008 Murcia
+              </a>
+            </div>
+            <div className="contact-links" aria-label="Datos de contacto">
+              <a href="https://wa.me/34630533323" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>630 533 323</strong><Arrow /></a>
+              <a href="tel:+34630533323"><span>Teléfono</span><strong>630 533 323</strong><Arrow /></a>
+              <a href="mailto:altafrecuencia@gmail.com"><span>Correo</span><strong>altafrecuencia@gmail.com</strong><Arrow /></a>
+            </div>
+          </div>
+          <div className="contact-map">
+            <iframe
+              title="Ubicación de Alta Frecuencia en Murcia"
+              src="https://www.google.com/maps?q=Gran+V%C3%ADa+Alfonso+X+el+Sabio,+11,+30008+Murcia,+Espa%C3%B1a&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+Alfonso+X+el+Sabio+11+30008+Murcia" target="_blank" rel="noreferrer"><span>Abrir ubicación en Google Maps</span><Arrow /></a>
+          </div>
+        </div>
+      </section>
 
       <footer><div className="footer-top"><Image src="/brand/logo-color.png" alt="Alta Frecuencia" width={700} height={154} /><p>Fisioterapia. Fuerza. Movimiento.<br />Murcia, España.</p></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Alta Frecuencia</span><span>Muévete, recupera, vuelve más fuerte.</span><a href="#inicio">Volver arriba <Arrow /></a></div></footer>
     </main>
