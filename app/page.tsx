@@ -99,9 +99,18 @@ export default function Home() {
         <div className="contact-heading">
           <p className="overline">Alta Frecuencia · Murcia</p>
           <h2>El siguiente<br />paso es tuyo</h2>
-          <p className="contact-intro">Cuéntanos qué quieres recuperar, mejorar o conseguir. Encontraremos el punto de partida.</p>
+          <p className="contact-intro">Cuéntanos qué quieres recuperar, mejorar o conseguir.<br />Encontraremos el punto de partida.</p>
         </div>
-        <div className="contact-layout">
+        <div className="contact-column">
+          <div className="contact-map">
+            <iframe
+              title="Ubicación de Alta Frecuencia en Murcia"
+              src="https://www.google.com/maps?q=Gran+V%C3%ADa+Alfonso+X+el+Sabio,+11,+30008+Murcia,+Espa%C3%B1a&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
           <div className="contact-details">
             <div className="contact-address">
               <span>Centro de fisioterapia y entrenamiento</span>
@@ -115,16 +124,6 @@ export default function Home() {
               <a href="tel:+34630533323"><span>Teléfono</span><strong>630 533 323</strong><Arrow /></a>
               <a href="mailto:altafrecuencia@gmail.com"><span>Correo</span><strong>altafrecuencia@gmail.com</strong><Arrow /></a>
             </div>
-          </div>
-          <div className="contact-map">
-            <iframe
-              title="Ubicación de Alta Frecuencia en Murcia"
-              src="https://www.google.com/maps?q=Gran+V%C3%ADa+Alfonso+X+el+Sabio,+11,+30008+Murcia,+Espa%C3%B1a&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-            <a href="https://www.google.com/maps/search/?api=1&query=Gran+V%C3%ADa+Alfonso+X+el+Sabio+11+30008+Murcia" target="_blank" rel="noreferrer"><span>Abrir ubicación en Google Maps</span><Arrow /></a>
           </div>
         </div>
       </section>
