@@ -131,14 +131,17 @@ export default function Home() {
             <a href="mailto:altafrecuencia@gmail.com"><span>Correo</span><strong>altafrecuencia@gmail.com</strong><Arrow /></a>
           </div>
         </div>
-        <div className="contact-map">
-          <iframe
-            title="Ubicación de Alta Frecuencia en Murcia"
-            src="https://www.google.com/maps?q=Gran+V%C3%ADa+Alfonso+X+el+Sabio,+11,+30008+Murcia,+Espa%C3%B1a&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+        <div className="contact-map-block">
+          <div className="contact-map">
+            <iframe
+              title="Ubicación de Alta Frecuencia en Murcia"
+              src="https://www.google.com/maps?q=Gran+V%C3%ADa+Alfonso+X+el+Sabio,+11,+30008+Murcia,+Espa%C3%B1a&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <p className="contact-languages">Atendemos en Español, Inglés, Francés, Italiano y Árabe</p>
         </div>
       </section>
 
