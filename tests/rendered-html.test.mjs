@@ -25,6 +25,9 @@ test("renders the Alta Frecuencia landing page", async () => {
   assert.match(html, /tel:\+34630533323/);
   assert.match(html, /mailto:altafrecuencia@gmail\.com/);
   assert.match(html, /Ubicación de Alta Frecuencia en Murcia/);
+  assert.match(html, /Electrólisis percutánea ecoguiada/);
+  assert.match(html, /Ondas de choque Biotecna/);
+  assert.match(html, /Radiofrecuencia Winback y Globus/);
   assert.doesNotMatch(html, /Abrir ubicación en Google Maps/i);
   assert.doesNotMatch(html, /Abrir menú de navegación/i);
   assert.doesNotMatch(html, /Masaje descontracturante/i);

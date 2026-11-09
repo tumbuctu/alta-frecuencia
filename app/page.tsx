@@ -11,6 +11,15 @@ const physioServices = [
   { kicker: "Movimiento y autonomía", title: "Fisioterapia neurológica", price: "40 €", unit: "/ sesión", copy: "Atención individualizada para personas con alteraciones del movimiento asociadas a una condición neurológica. Trabajamos movilidad, fuerza, equilibrio y coordinación con objetivos orientados a mejorar la autonomía y facilitar las actividades cotidianas.", cta: "Consulta tu caso" },
 ];
 
+const physioTechniques = [
+  "Ecografía",
+  "Neuromodulación invasiva",
+  "Electrólisis percutánea ecoguiada",
+  "Radiofrecuencia Winback y Globus",
+  "Ondas de choque Biotecna",
+  "Presoterapia",
+];
+
 const methodSteps = [
   ["01", "Entender qué necesitas", "Empezamos con tu historia, tus síntomas y una valoración funcional. La ecografía musculoesquelética puede complementar la exploración cuando está indicada."],
   ["02", "Un plan con sentido", "Combinamos ejercicio terapéutico y las técnicas que requiera tu caso: terapia manual, punción seca o neuromodulación, según la valoración clínica."],
@@ -63,6 +72,13 @@ export default function Home() {
       <section className="physio section" id="fisioterapia">
         <p className="overline">Tratamiento / Recupera movimiento</p><h2>Fisioterapia<br />adaptada a ti</h2><p className="lead wide">Valoramos tu situación y elegimos el abordaje que necesitas para aliviar molestias, recuperar tu función y moverte con mayor confianza.</p>
         <div className="price-card-grid" id="tarifas">{physioServices.map((service) => <article className="price-card" key={service.title}><p className="card-kicker">{service.kicker}</p><h3>{service.title}</h3><p className="price"><strong>{service.price}</strong> <span>{service.unit}</span></p><p>{service.copy}</p>{service.note && <p className="info-note">{service.note}</p>}<CtaLink>{service.cta}</CtaLink></article>)}</div>
+        <div className="physio-techniques">
+          <div className="physio-techniques-intro">
+            <div><p className="overline">Técnicas y tecnología</p><h3>Más recursos para adaptar cada tratamiento</h3></div>
+            <p>Contamos con diferentes técnicas y equipos de fisioterapia que incorporamos cuando están indicados, siempre a partir de una valoración clínica individual.</p>
+          </div>
+          <div className="technique-grid">{physioTechniques.map((technique, index) => <article className="technique-card" key={technique}><span>{String(index + 1).padStart(2, "0")}</span><h4>{technique}</h4></article>)}</div>
+        </div>
       </section>
 
       <section className="method section" id="metodo">
